@@ -8,5 +8,16 @@
 <body>
     <p>Uspešno je bilo</p>
 	{}
+	
+<form action="/" method="POST">
+  <label for="visinaID">Višina (cm):</label><br>
+  <input type="text" id="visinaID" name="visina" value="{{podatki['visina']}}"><br>
+  <label for="tezaID">Teža (kg):</label><br>
+  <input type="text" id="tezaID" name="teza" value="{{podatki['teza']}}"><br><br>
+  <input type="submit" value="Izračunaj">
+</form> 
+{% if podatki['itm'] %}
+<i>Vaš ITM je {{podatki {'itm'}}}</i>
+{% endif %}
 </body>
 </html>
