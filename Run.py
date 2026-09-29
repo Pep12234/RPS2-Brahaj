@@ -40,3 +40,4 @@ def izracunaj_itm(visinaCm, tezaKg):
 app.config["DEBUG"] = True
 app.run(host = APP_ADDRES, port = APP_PORT)
 
+nobo
