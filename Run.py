@@ -27,6 +27,7 @@ def index():
         
         if data["teza"] and data["visina"]:
             data["itm"] = izracunaj_itm(float(data[visina]), float(data["teza"])) 
+            dbLogic.insertdata(float(data[visina]), float(data["teza"])
         
         print(data)
     
@@ -35,6 +36,12 @@ def index():
 def izracunaj_itm(visinaCm, tezaKg):
     itm = tezaKg / (visinaCm/100) **2
     return itm 
+@app.route("/dnevnik", methods = ["GET", "POST"])
+def dnevnik():
+    data = {}
+    
+    data["seznam"] = dbLogic.getAll()
+    return render_template("dnevnik.html", podatki = data)
 
 
 app.config["DEBUG"] = True
